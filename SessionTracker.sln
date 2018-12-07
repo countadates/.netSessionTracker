@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionTracker", "SessionTracker\SessionTracker.csproj", "{0DA070DA-E28A-4EE5-9A6D-778754BA777B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionTrackerTest", "SessionTrackerTest\SessionTrackerTest.csproj", "{D74F0782-5AD7-4707-8ABE-A414D5C3882A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DA070DA-E28A-4EE5-9A6D-778754BA777B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA070DA-E28A-4EE5-9A6D-778754BA777B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA070DA-E28A-4EE5-9A6D-778754BA777B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA070DA-E28A-4EE5-9A6D-778754BA777B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74F0782-5AD7-4707-8ABE-A414D5C3882A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74F0782-5AD7-4707-8ABE-A414D5C3882A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74F0782-5AD7-4707-8ABE-A414D5C3882A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74F0782-5AD7-4707-8ABE-A414D5C3882A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF8EFE19-563D-4412-900D-FA521B1ED807}
+	EndGlobalSection
+EndGlobal
