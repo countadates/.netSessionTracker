@@ -3,3 +3,17 @@
 ################################################################################
 
 /.vs/SessionTracker/v15/Server/sqlite3/db.lock
+/.vs/SessionTracker/v15/Server/sqlite3
+/SessionTracker/DataSet1.xsc
+/SessionTracker/DataSet1.xsd
+/SessionTracker/DataSet1.xss
+/SessionTracker/DataSet1.Designer.cs
+/SessionTracker/Properties/DataSources
+/SessionTracker/Properties
+/SessionTracker/obj/Debug
+/SessionTracker/bin/Debug
+/.vs/SessionTracker/v15
+/SessionTrackerTest/bin/Debug
+/SessionTrackerTest/obj/Debug
+/SessionTrackerTest
+/packages

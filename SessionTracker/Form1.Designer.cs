@@ -40,6 +40,7 @@
             this.speichernToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.schließenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +51,8 @@
             this.sessionTrackerMainBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sessionTrackerMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sessionTrackerMainBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveLastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.mnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrackDataView)).BeginInit();
@@ -112,6 +115,7 @@
             this.speichernToolStripMenuItem,
             this.importierenToolStripMenuItem,
             this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
             this.toolStripMenuItem2,
             this.schließenToolStripMenuItem});
             this.summaryToolStripMenuItem.Name = "summaryToolStripMenuItem";
@@ -121,38 +125,47 @@
             // speichernToolStripMenuItem
             // 
             this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
-            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.speichernToolStripMenuItem.Text = "speichern";
             // 
             // importierenToolStripMenuItem
             // 
             this.importierenToolStripMenuItem.Name = "importierenToolStripMenuItem";
-            this.importierenToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.importierenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importierenToolStripMenuItem.Text = "importieren";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(166, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem3.Text = "start on Windows";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Text = "Database anlegen";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(163, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // schließenToolStripMenuItem
             // 
             this.schließenToolStripMenuItem.Name = "schließenToolStripMenuItem";
-            this.schließenToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.schließenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.schließenToolStripMenuItem.Text = "schließen";
             // 
             // zeitenToolStripMenuItem
             // 
             this.zeitenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.neuToolStripMenuItem,
-            this.summaryToolStripMenuItem1});
+            this.summaryToolStripMenuItem1,
+            this.toolStripMenuItem5,
+            this.saveLastToolStripMenuItem});
             this.zeitenToolStripMenuItem.Name = "zeitenToolStripMenuItem";
             this.zeitenToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.zeitenToolStripMenuItem.Text = "Zeiten";
@@ -160,14 +173,14 @@
             // neuToolStripMenuItem
             // 
             this.neuToolStripMenuItem.Name = "neuToolStripMenuItem";
-            this.neuToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.neuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.neuToolStripMenuItem.Text = "Neu";
             this.neuToolStripMenuItem.Click += new System.EventHandler(this.neuToolStripMenuItem_Click);
             // 
             // summaryToolStripMenuItem1
             // 
             this.summaryToolStripMenuItem1.Name = "summaryToolStripMenuItem1";
-            this.summaryToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.summaryToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.summaryToolStripMenuItem1.Text = "Summary";
             this.summaryToolStripMenuItem1.Click += new System.EventHandler(this.summaryToolStripMenuItem1_Click);
             // 
@@ -196,6 +209,18 @@
             // sessionTrackerMainBindingSource2
             // 
             this.sessionTrackerMainBindingSource2.DataSource = typeof(SessionTracker.SessionTrackerMain);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(177, 6);
+            // 
+            // saveLastToolStripMenuItem
+            // 
+            this.saveLastToolStripMenuItem.Name = "saveLastToolStripMenuItem";
+            this.saveLastToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveLastToolStripMenuItem.Text = "Save Last";
+            this.saveLastToolStripMenuItem.Click += new System.EventHandler(this.saveLastToolStripMenuItem_Click);
             // 
             // SessionTrackerMain
             // 
@@ -244,6 +269,9 @@
         private System.Windows.Forms.BindingSource sessionTrackerMainBindingSource1;
         private System.Windows.Forms.BindingSource trackBindingSource;
         private System.Windows.Forms.BindingSource sessionTrackerMainBindingSource2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem saveLastToolStripMenuItem;
     }
 }
 

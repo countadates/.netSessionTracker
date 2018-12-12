@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SessionTracker.lib;
 using SessionTracker.Dialogs;
 using Microsoft.Win32;
+using System.Data.SQLite;
 
 namespace SessionTracker
 {
@@ -20,11 +21,14 @@ namespace SessionTracker
         BindingSource bsource = new BindingSource();
         WindowsSession session = new WindowsSession();
         Track currentTrack = new Track();
+        SQLiteProvider m_dbProvider;
         
 
         public SessionTrackerMain()
         {
             InitializeComponent();
+            m_dbProvider = new SQLiteProvider();
+            m_dbProvider.Open("SessionTracker.sqlite");
             session.StateChanged += Session_StateChanged;
             bsource.DataSource = this.tracks;
             dgvTrackDataView.DataSource = bsource;
@@ -39,6 +43,7 @@ namespace SessionTracker
                     currentTrack.stop = DateTime.Now;
                     currentTrack.description = "Working";
                     tracks.Add(currentTrack);
+                    m_dbProvider.SaveTrack(currentTrack);
                     currentTrack = new Track();
                     DataSourceChanged();
                     break;
@@ -47,6 +52,7 @@ namespace SessionTracker
                     currentTrack.stop = DateTime.Now;
                     currentTrack.description = "Paused";
                     tracks.Add(currentTrack);
+                    m_dbProvider.SaveTrack(currentTrack);
                     currentTrack = new Track();
                     DataSourceChanged();
                     break;
@@ -141,6 +147,16 @@ namespace SessionTracker
             {
                 return;                                  //  that doesn't have a file name
             }
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void saveLastToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_dbProvider.SaveTrack(tracks[0]);
         }
     }
 }
