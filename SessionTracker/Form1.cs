@@ -39,6 +39,7 @@ namespace SessionTracker
             switch (e.Reason)
             {
                 case Microsoft.Win32.SessionSwitchReason.SessionLock:
+                case Microsoft.Win32.SessionSwitchReason.SessionLogoff:
                     // close current Track and add it to List
                     currentTrack.stop = DateTime.Now;
                     currentTrack.description = "Working";
@@ -157,6 +158,14 @@ namespace SessionTracker
         private void saveLastToolStripMenuItem_Click(object sender, EventArgs e)
         {
             m_dbProvider.SaveTrack(tracks[0]);
+        }
+
+        private void SessionTrackerMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // close current Track and add it to List
+            currentTrack.stop = DateTime.Now;
+            currentTrack.description = "Working";
+            m_dbProvider.SaveTrack(currentTrack);
         }
     }
 }
