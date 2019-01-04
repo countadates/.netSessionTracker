@@ -32,6 +32,7 @@ namespace SessionTracker
             session.StateChanged += Session_StateChanged;
             bsource.DataSource = this.tracks;
             dgvTrackDataView.DataSource = bsource;
+            toolStripMenuItem3.Checked = IsApplicationFromStartup();
         }
 
         private void Session_StateChanged(object sender, Microsoft.Win32.SessionSwitchEventArgs e)
@@ -137,9 +138,30 @@ namespace SessionTracker
             }
         }
 
+        public bool IsApplicationFromStartup()
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            {
+                var value = key.GetValue("SessionTracker");
+                if (value != null)
+                {
+                    return value.Equals("\"" + Application.ExecutablePath + "\"");
+                }
+            }
+            return false;
+        }
+
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            AddApplicationToStartup();
+            if (toolStripMenuItem3.Checked == false)
+            {
+                AddApplicationToStartup();
+                toolStripMenuItem3.Checked = true;
+            }
+            else {
+                RemoveApplicationFromStartup();
+                toolStripMenuItem3.Checked = false;
+            }
         }
 
         private void dgvTrackDataView_CellClick(object sender, DataGridViewCellEventArgs e)
