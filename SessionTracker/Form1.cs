@@ -11,6 +11,7 @@ using SessionTracker.lib;
 using SessionTracker.Dialogs;
 using Microsoft.Win32;
 using System.Data.SQLite;
+using System.IO;
 
 namespace SessionTracker
 {
@@ -22,17 +23,20 @@ namespace SessionTracker
         WindowsSession session = new WindowsSession();
         Track currentTrack = new Track();
         SQLiteProvider m_dbProvider;
-        
+        String DBFileName = "SessionTracker.sqlite";
+
+
 
         public SessionTrackerMain()
         {
             InitializeComponent();
             m_dbProvider = new SQLiteProvider();
-            m_dbProvider.Open("SessionTracker.sqlite");
+            m_dbProvider.Open(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath),DBFileName));
             session.StateChanged += Session_StateChanged;
             bsource.DataSource = this.tracks;
             dgvTrackDataView.DataSource = bsource;
             toolStripMenuItem3.Checked = IsApplicationFromStartup();
+            listBox1.Controls.Add(new Components.DayPanel() { Visible = true });
         }
 
         private void Session_StateChanged(object sender, Microsoft.Win32.SessionSwitchEventArgs e)
@@ -189,5 +193,14 @@ namespace SessionTracker
             currentTrack.description = "Working";
             m_dbProvider.SaveTrack(currentTrack);
         }
+
+        private void ListDayCounter() {
+            List<Track> tracks=this.m_dbProvider.getTracks();
+            foreach (Track track in tracks) {
+                Components.DayPanel panel = new Components.DayPanel();
+                listBox1.Controls.Add(panel);
+            }
+        }
     }
+
 }
