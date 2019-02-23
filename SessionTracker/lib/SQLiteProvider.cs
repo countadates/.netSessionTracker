@@ -65,6 +65,29 @@ namespace SessionTracker.lib
             return tracks;
         }
 
+        public List<DayCounter> getCounter() {
+            List<DayCounter> counterlist = new List<DayCounter>();
+            string stm = "SELECT * FROM DayCounterLastMonth order by day";
+
+            using (SQLiteCommand cmd = new SQLiteCommand(stm, _connection))
+            {
+                using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                {
+                    while (rdr.Read())
+                    {
+                        DateTime date = (DateTime) rdr["day"];
+                        DayCounter counter = new DayCounter(
+                                (DateTime)rdr["day"],
+                                Convert.ToInt32(rdr["weekday"]),
+                                Convert.ToInt32(rdr["week"]) +1,
+                                Convert.ToDouble(rdr["counter"]));
+                        counterlist.Add(counter);
+                    }
+                }
+            }
+
+            return counterlist;
+        } 
 
     }
 }

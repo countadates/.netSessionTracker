@@ -73,13 +73,21 @@
     <Compile Include="Components\DayPanel.Designer.cs">
       <DependentUpon>DayPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\EntryType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\EntryType.Designer.cs">
+      <DependentUpon>EntryType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="lib\DayCounter.cs" />
     <Compile Include="lib\SQLiteProvider.cs" />
+    <Compile Include="lib\StatusEnum.cs" />
     <Compile Include="lib\Track.cs" />
     <Compile Include="Dialogs\NewTrackDlg.cs">
       <SubType>Form</SubType>
@@ -92,6 +100,9 @@
     <Compile Include="lib\WindowsSession.cs" />
     <EmbeddedResource Include="Components\DayPanel.resx">
       <DependentUpon>DayPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\EntryType.resx">
+      <DependentUpon>EntryType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

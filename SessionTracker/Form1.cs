@@ -25,8 +25,6 @@ namespace SessionTracker
         SQLiteProvider m_dbProvider;
         String DBFileName = "SessionTracker.sqlite";
 
-
-
         public SessionTrackerMain()
         {
             InitializeComponent();
@@ -36,7 +34,7 @@ namespace SessionTracker
             bsource.DataSource = this.tracks;
             dgvTrackDataView.DataSource = bsource;
             toolStripMenuItem3.Checked = IsApplicationFromStartup();
-            listBox1.Controls.Add(new Components.DayPanel() { Visible = true });
+            ListDayCounter();
         }
 
         private void Session_StateChanged(object sender, Microsoft.Win32.SessionSwitchEventArgs e)
@@ -54,9 +52,19 @@ namespace SessionTracker
                     DataSourceChanged();
                     break;
                 case Microsoft.Win32.SessionSwitchReason.SessionUnlock:
+                    if ((DateTime.Now - currentTrack.start) > TimeSpan.FromMinutes(10))
+                    {
+                        // show EntryType
+
+                        Components.EntryType dlg = new Components.EntryType();
+                        dlg.ShowDialog();
+                        currentTrack.description = dlg.Type;
+                    }
+                    else {
+                        currentTrack.description = "Waiting";
+                    }
                     // close current Track and add it to List
                     currentTrack.stop = DateTime.Now;
-                    currentTrack.description = "Paused";
                     tracks.Add(currentTrack);
                     m_dbProvider.SaveTrack(currentTrack);
                     currentTrack = new Track();
@@ -114,7 +122,12 @@ namespace SessionTracker
 
         private void neuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Dialogs.NewTrackDlg dlg = new Dialogs.NewTrackDlg();
+            this.ClearListDayCounter();
+        }
+
+        private void insertNewTrack() {
+            using (Dialogs.NewTrackDlg dlg = new Dialogs.NewTrackDlg())
+            {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     Track track = new Track();
@@ -124,6 +137,7 @@ namespace SessionTracker
                     tracks.Add(track);
                     DataSourceChanged();
                 }
+            }
         }
 
         public void AddApplicationToStartup()
@@ -183,7 +197,14 @@ namespace SessionTracker
 
         private void saveLastToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            m_dbProvider.SaveTrack(tracks[0]);
+            currentTrack.stop = DateTime.Now;
+            tracks.Add(currentTrack);
+            m_dbProvider.SaveTrack(currentTrack);
+            currentTrack = new Track();
+            DataSourceChanged();
+            ClearListDayCounter();
+            ListDayCounter();
+
         }
 
         private void SessionTrackerMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -194,10 +215,24 @@ namespace SessionTracker
             m_dbProvider.SaveTrack(currentTrack);
         }
 
+        private void ClearListDayCounter()
+        {
+            for (int c = listBox1.Controls.Count - 1; c >= 0; c--)
+            {
+                listBox1.Controls.RemoveAt(c);
+            }
+            listBox1.Controls.Clear();
+        }
+
         private void ListDayCounter() {
-            List<Track> tracks=this.m_dbProvider.getTracks();
-            foreach (Track track in tracks) {
+            List<DayCounter> days=this.m_dbProvider.getCounter();
+            foreach (DayCounter day in days) {
                 Components.DayPanel panel = new Components.DayPanel();
+                panel.hourCount = string.Format("{0:0.00}", (day.Counter / 60));
+                panel.WeekDay = day.DayName;
+                panel.Date = String.Format("{0:d}",day.Date);
+                panel.Week = day.Week.ToString();
+                panel.status = day.status;
                 listBox1.Controls.Add(panel);
             }
         }

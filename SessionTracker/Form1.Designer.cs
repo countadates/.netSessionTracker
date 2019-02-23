@@ -50,19 +50,19 @@
             this.saveLastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvTrackDataView = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.FlowLayoutPanel();
             this.trackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sessionTrackerMainBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sessionTrackerMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sessionTrackerMainBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.listBox1 = new System.Windows.Forms.FlowLayoutPanel();
             this.contextMenuStrip1.SuspendLayout();
             this.mnMain.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrackDataView)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionTrackerMainBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionTrackerMainBindingSource)).BeginInit();
@@ -180,26 +180,26 @@
             // neuToolStripMenuItem
             // 
             this.neuToolStripMenuItem.Name = "neuToolStripMenuItem";
-            this.neuToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.neuToolStripMenuItem.Text = "Neu";
+            this.neuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.neuToolStripMenuItem.Text = "Clear";
             this.neuToolStripMenuItem.Click += new System.EventHandler(this.neuToolStripMenuItem_Click);
             // 
             // summaryToolStripMenuItem1
             // 
             this.summaryToolStripMenuItem1.Name = "summaryToolStripMenuItem1";
-            this.summaryToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.summaryToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.summaryToolStripMenuItem1.Text = "Summary";
             this.summaryToolStripMenuItem1.Click += new System.EventHandler(this.summaryToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(122, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(177, 6);
             // 
             // saveLastToolStripMenuItem
             // 
             this.saveLastToolStripMenuItem.Name = "saveLastToolStripMenuItem";
-            this.saveLastToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.saveLastToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveLastToolStripMenuItem.Text = "Save Last";
             this.saveLastToolStripMenuItem.Click += new System.EventHandler(this.saveLastToolStripMenuItem_Click);
             // 
@@ -225,6 +225,15 @@
             this.tabPage1.Text = "Tracks";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dgvTrackDataView
+            // 
+            this.dgvTrackDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTrackDataView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTrackDataView.Location = new System.Drawing.Point(3, 3);
+            this.dgvTrackDataView.Name = "dgvTrackDataView";
+            this.dgvTrackDataView.Size = new System.Drawing.Size(345, 190);
+            this.dgvTrackDataView.TabIndex = 3;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.listBox1);
@@ -236,14 +245,16 @@
             this.tabPage2.Text = "DayCounter";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dgvTrackDataView
+            // listBox1
             // 
-            this.dgvTrackDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTrackDataView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTrackDataView.Location = new System.Drawing.Point(3, 3);
-            this.dgvTrackDataView.Name = "dgvTrackDataView";
-            this.dgvTrackDataView.Size = new System.Drawing.Size(345, 190);
-            this.dgvTrackDataView.TabIndex = 3;
+            this.listBox1.AutoScroll = true;
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.listBox1.Location = new System.Drawing.Point(3, 3);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(345, 190);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.WrapContents = false;
             // 
             // trackBindingSource
             // 
@@ -260,14 +271,6 @@
             // sessionTrackerMainBindingSource2
             // 
             this.sessionTrackerMainBindingSource2.DataSource = typeof(SessionTracker.SessionTrackerMain);
-            // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(345, 190);
-            this.listBox1.TabIndex = 0;
             // 
             // SessionTrackerMain
             // 
@@ -287,8 +290,8 @@
             this.mnMain.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrackDataView)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionTrackerMainBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionTrackerMainBindingSource)).EndInit();
