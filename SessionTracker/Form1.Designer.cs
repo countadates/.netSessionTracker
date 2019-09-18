@@ -57,6 +57,7 @@
             this.sessionTrackerMainBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sessionTrackerMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sessionTrackerMainBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.reloadDayListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.mnMain.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -78,41 +79,44 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showToolStripMenuItem,
             this.toolStripMenuItem1,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(103, 54);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 70);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(126, 30);
             this.showToolStripMenuItem.Text = "show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(99, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(123, 6);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(126, 30);
             this.closeToolStripMenuItem.Text = "close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // mnMain
             // 
+            this.mnMain.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mnMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.summaryToolStripMenuItem,
             this.zeitenToolStripMenuItem});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
             this.mnMain.Name = "mnMain";
-            this.mnMain.Size = new System.Drawing.Size(359, 24);
+            this.mnMain.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.mnMain.Size = new System.Drawing.Size(538, 35);
             this.mnMain.TabIndex = 1;
             this.mnMain.Text = "menuStrip1";
             // 
@@ -126,44 +130,44 @@
             this.toolStripMenuItem2,
             this.schließenToolStripMenuItem});
             this.summaryToolStripMenuItem.Name = "summaryToolStripMenuItem";
-            this.summaryToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.summaryToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.summaryToolStripMenuItem.Text = "Datei";
             // 
             // speichernToolStripMenuItem
             // 
             this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
-            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
             this.speichernToolStripMenuItem.Text = "speichern";
             // 
             // importierenToolStripMenuItem
             // 
             this.importierenToolStripMenuItem.Name = "importierenToolStripMenuItem";
-            this.importierenToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.importierenToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
             this.importierenToolStripMenuItem.Text = "importieren";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(167, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(237, 30);
             this.toolStripMenuItem3.Text = "start on Windows";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(167, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(237, 30);
             this.toolStripMenuItem4.Text = "Database anlegen";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(164, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(234, 6);
             // 
             // schließenToolStripMenuItem
             // 
             this.schließenToolStripMenuItem.Name = "schließenToolStripMenuItem";
-            this.schließenToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.schließenToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
             this.schließenToolStripMenuItem.Text = "schließen";
             // 
             // zeitenToolStripMenuItem
@@ -172,34 +176,35 @@
             this.neuToolStripMenuItem,
             this.summaryToolStripMenuItem1,
             this.toolStripMenuItem5,
-            this.saveLastToolStripMenuItem});
+            this.saveLastToolStripMenuItem,
+            this.reloadDayListToolStripMenuItem});
             this.zeitenToolStripMenuItem.Name = "zeitenToolStripMenuItem";
-            this.zeitenToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.zeitenToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
             this.zeitenToolStripMenuItem.Text = "Zeiten";
             // 
             // neuToolStripMenuItem
             // 
             this.neuToolStripMenuItem.Name = "neuToolStripMenuItem";
-            this.neuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.neuToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.neuToolStripMenuItem.Text = "Clear";
             this.neuToolStripMenuItem.Click += new System.EventHandler(this.neuToolStripMenuItem_Click);
             // 
             // summaryToolStripMenuItem1
             // 
             this.summaryToolStripMenuItem1.Name = "summaryToolStripMenuItem1";
-            this.summaryToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.summaryToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
             this.summaryToolStripMenuItem1.Text = "Summary";
             this.summaryToolStripMenuItem1.Click += new System.EventHandler(this.summaryToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(249, 6);
             // 
             // saveLastToolStripMenuItem
             // 
             this.saveLastToolStripMenuItem.Name = "saveLastToolStripMenuItem";
-            this.saveLastToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveLastToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.saveLastToolStripMenuItem.Text = "Save Last";
             this.saveLastToolStripMenuItem.Click += new System.EventHandler(this.saveLastToolStripMenuItem_Click);
             // 
@@ -208,19 +213,21 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 24);
+            this.tabControl1.Location = new System.Drawing.Point(0, 35);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(359, 222);
+            this.tabControl1.Size = new System.Drawing.Size(538, 343);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvTrackDataView);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(351, 196);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Size = new System.Drawing.Size(530, 310);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tracks";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -229,18 +236,20 @@
             // 
             this.dgvTrackDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrackDataView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTrackDataView.Location = new System.Drawing.Point(3, 3);
+            this.dgvTrackDataView.Location = new System.Drawing.Point(4, 5);
+            this.dgvTrackDataView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvTrackDataView.Name = "dgvTrackDataView";
-            this.dgvTrackDataView.Size = new System.Drawing.Size(345, 190);
+            this.dgvTrackDataView.Size = new System.Drawing.Size(522, 300);
             this.dgvTrackDataView.TabIndex = 3;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.listBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(351, 196);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage2.Size = new System.Drawing.Size(530, 309);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "DayCounter";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -250,9 +259,10 @@
             this.listBox1.AutoScroll = true;
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
+            this.listBox1.Location = new System.Drawing.Point(4, 5);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(345, 190);
+            this.listBox1.Size = new System.Drawing.Size(522, 299);
             this.listBox1.TabIndex = 0;
             this.listBox1.WrapContents = false;
             // 
@@ -272,15 +282,23 @@
             // 
             this.sessionTrackerMainBindingSource2.DataSource = typeof(SessionTracker.SessionTrackerMain);
             // 
+            // reloadDayListToolStripMenuItem
+            // 
+            this.reloadDayListToolStripMenuItem.Name = "reloadDayListToolStripMenuItem";
+            this.reloadDayListToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.reloadDayListToolStripMenuItem.Text = "Reload Day List";
+            this.reloadDayListToolStripMenuItem.Click += new System.EventHandler(this.reloadDayListToolStripMenuItem_Click);
+            // 
             // SessionTrackerMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 246);
+            this.ClientSize = new System.Drawing.Size(538, 378);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnMain;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SessionTrackerMain";
             this.Text = "SessionTracker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SessionTrackerMain_FormClosing);
@@ -330,6 +348,7 @@
         private System.Windows.Forms.DataGridView dgvTrackDataView;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.FlowLayoutPanel listBox1;
+        private System.Windows.Forms.ToolStripMenuItem reloadDayListToolStripMenuItem;
     }
 }
 

@@ -79,6 +79,12 @@
     <Compile Include="Components\EntryType.Designer.cs">
       <DependentUpon>EntryType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\Tracklist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Tracklist.Designer.cs">
+      <DependentUpon>Tracklist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,11 +104,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="lib\WindowsSession.cs" />
+    <Compile Include="TracksQuery.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TracksQuery.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Components\DayPanel.resx">
       <DependentUpon>DayPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\EntryType.resx">
       <DependentUpon>EntryType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Tracklist.resx">
+      <DependentUpon>Tracklist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -132,6 +146,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TracksQuery.xsc">
+      <DependentUpon>TracksQuery.xsd</DependentUpon>
+    </None>
+    <None Include="TracksQuery.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TracksQuery.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TracksQuery.xss">
+      <DependentUpon>TracksQuery.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

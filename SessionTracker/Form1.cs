@@ -236,6 +236,12 @@ namespace SessionTracker
                 listBox1.Controls.Add(panel);
             }
         }
+
+        private void reloadDayListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ClearListDayCounter();
+            this.ListDayCounter();
+        }
     }
 
 }
